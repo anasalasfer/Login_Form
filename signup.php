@@ -15,13 +15,11 @@ if ($conn->connect_error) {
 // استقبال معلومات التسجيل من المستخدم
 $username = $_POST["username"];
 $email = $_POST["email"];
-$password = $_POST["password"]; // لا تقم بتجزئة كلمة المرور هنا
+$password = $_POST["password"]; 
 
 // قم بتحقق من صحة المعلومات المُدخلة وتنفيذ العملية إذا تم التحقق
 if (!empty($username) && !empty($email) && !empty($password)) {
-    // هنا يمكنك إجراء المزيد من التحقق من البيانات إذا لزم الأمر
 
-    // قم بعمل تجزئة لكلمة المرور
     $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
     // قم بإعداد استعلام SQL لإدراج بيانات المستخدم الجديد
